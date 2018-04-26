@@ -5,9 +5,11 @@
 #
 #------------------------------------------------
 
+echo -n "请输入备份信息："
+read message	# 备份的信息
 
 database_name='xjxx'	# 要备份数据的名字
-file_name="${database_name}_backup_`date '+%Y-%m-%d %H:%M:%S'`.sql" # 备份数据的名字
+file_name="${database_name}_backup_`date '+%Y-%m-%d_%H:%M:%S'`_${message}.sql" # 备份数据的名字
 #echo $file_name
 workdir=$(cd $(dirname ${BASH_SOURCE[0]}); pwd ) # 保存备份文件的文件夹
 #echo $workdir
